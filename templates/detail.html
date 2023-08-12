@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="card mb-3 centre" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{movie_detail.image.url}}" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{movie_detail.name}}</h5>
+                        <p class="card-text">{{movie_detail.description}}</p>
+                        <p class="card-text">Year: {{movie_detail.year}}</p>
+                        <p class="card-text">Genre: {{movie_detail.genre}}</p>
+                        <a type="button" class="btn btn-outline-success"
+                            href="{% url 'movieapp:edit' movie_detail.id %}">Edit</a><br>
+                        <a type="button" class="btn btn-outline-danger mt-4"
+                            href="{% url 'movieapp:remove' movie_detail.id %}">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+</body>
+
+</html>
